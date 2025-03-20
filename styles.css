@@ -497,6 +497,7 @@ footer .text-center {
         transform 0.5s ease,
         opacity 0.5s ease;
     transform: scale(0.8);
+    z-index: 0;
 }
 
 .glide__slide img {
@@ -504,24 +505,14 @@ footer .text-center {
     height: auto;
     display: flex;
     border-radius: 5px;
+    z-index: 0;
 }
 
 .glide__slide.glide__slide--active {
     opacity: 1;
-    z-index: 1;
+    z-index: 0;
 }
 
-.slide-header {
-    margin-top: 2vh;
-    font-size: 1.5rem;
-    color: #000;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    vertical-align: middle;
-    height: 50px;
-    line-height: 1.7rem;
-}
 
 .glide__slide.glide__slide--active .slide-header {
     opacity: 1;
@@ -573,9 +564,44 @@ footer .text-center {
     transition: background 0.3s ease;
 }
 
-.glide__bullet:hover,
-.glide__bullet.glide__bullet--active {
-    background: rgba(0, 0, 0, 1);
+.glide__slide {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+
+
+
+
+.image-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 2.7vw;
+  line-height: 120%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 200; /* Title is above the overlay */
+  text-align: center;
+  padding: 15%;
+}
+
+.glide__slide:hover img {
+    opacity: 0.2;
+      transition: opacity 0.3s ease;
+
+}
+
+.glide__slide:hover .image-title {
+  opacity: 1;
 }
 
 /* ==================== */

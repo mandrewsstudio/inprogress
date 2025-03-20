@@ -117,40 +117,46 @@
     </section>
 
     <!-- Glide Slider Section -->
-    <div class="glide">
-      <div class="glide__track" data-glide-el="track">
-        <ul class="glide__slides">
-          <li class="glide__slide">
-            <a href="afn/index.html">
-              <img src="images/InProgress-Home-AFN.avif" alt="Slide 1" loading="lazy" />
-            </a>
-          </li>
-          <li class="glide__slide">
-            <a href="deartomorrow/">
-            <img src="images/InProgress-Home-DearTomorrow.avif" alt="Slide 2" loading="lazy" />
-            </a>
-          </li>
-          <li class="glide__slide">
-            <a href="gagnd/">
-              <img src="images/InProgress-Home-GAGND.avif" alt="Slide 3" loading="lazy" /></a>
-          </li>
-          <li class="glide__slide">
-            <a href="pff/">
-              <img src="images/InProgress-Home-PFFUK.avif" alt="Slide 4" loading="lazy" /></a>
-          </li>
-          <li class="glide__slide">
-            <a href="purposedisruptors/">
-              <img src="images/InProgress-Home-PurposeDisruptors.avif" alt="Slide 4" loading="lazy" />
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="glide__arrows" data-glide-el="controls">
-        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">←</button>
-        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">→</button>
-      </div>
-
-    </div>
+<div class="glide">
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      <li class="glide__slide">
+        <a href="afn/index.html">
+          <img src="images/InProgress-Home-AFN.avif" alt="Slide 1" loading="lazy" />
+          <span class="image-title">Agency for Nature</span>
+        </a>
+      </li>
+      <li class="glide__slide">
+        <a href="deartomorrow/">
+          <img src="images/InProgress-Home-DearTomorrow.avif" alt="Slide 2" loading="lazy" />
+          <span class="image-title">Dear Tomorrow</span>
+        </a>
+      </li>
+      <li class="glide__slide">
+        <a href="gagnd/">
+          <img src="images/InProgress-Home-GAGND.avif" alt="Slide 3" loading="lazy" />
+          <span class="image-title">The Global Alliance for a Green New Deal</span>
+        </a>
+      </li>
+      <li class="glide__slide">
+        <a href="pff/">
+          <img src="images/InProgress-Home-PFFUK.avif" alt="Slide 4" loading="lazy" />
+          <span class="image-title">Parents for Future UK</span>
+        </a>
+      </li>
+      <li class="glide__slide">
+        <a href="purposedisruptors/">
+          <img src="images/InProgress-Home-PurposeDisruptors2.avif" alt="Slide 4" loading="lazy" />
+          <span class="image-title">Purpose Disruptors</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="glide__arrows" data-glide-el="controls">
+    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">←</button>
+    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">→</button>
+  </div>
+</div>
 
     <!-- More Section -->
     <section class="more">
@@ -212,41 +218,48 @@ We specialise in branding and design for nonprofits, grassroots campaigns and re
 
     <!-- Glide.js JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const glide = new Glide(".glide", {
-          type: "carousel",
-          startAt: 1,
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Function to shuffle the slides
+    function shuffleSlides() {
+      const slidesContainer = document.querySelector(".glide__slides");
+      const slides = Array.from(slidesContainer.children); // Convert NodeList to Array
+      for (let i = slides.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1)); // Random index
+        slidesContainer.appendChild(slides[j]); // Move the slide to the end
+      }
+    }
+
+    // Shuffle the slides before initializing Glide
+    shuffleSlides();
+
+    // Initialize Glide
+    const glide = new Glide(".glide", {
+      type: "carousel",
+      startAt: 0, // Start at the first slide (after shuffling)
+      perView: 1,
+      focusAt: "center",
+      gap: 0,
+      peek: {
+        before: 250,
+        after: 250,
+      },
+      autoplay: 2000,
+      hoverpause: true,
+      animationDuration: 1000,
+      breakpoints: {
+        768: {
           perView: 1,
-          focusAt: "center",
-          gap: 0,
           peek: {
-            before: 250,
-            after: 250
+            before: 0,
+            after: 0,
           },
-          autoplay: 2000,
-          hoverpause: true,
-          animationDuration: 1000,
-          breakpoints: {
-            768: {
-              perView: 1,
-              peek: {
-                before: 0,
-                after: 0
-              }
-            }
-          }
-        });
+        },
+      },
+    });
 
-        let direction = "next";
-
-        glide.on("run.before", () => {
-          const slides = document.querySelectorAll(".glide__slide");
-          const activeIndex = glide.index;
-        });
-
-        glide.mount();
-      });
-    </script>
+    glide.mount();
+  });
+</script>
   </body>
 </html>
