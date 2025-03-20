@@ -193,6 +193,7 @@ nav a {
 
 .glide__slide a {
   border-bottom: 0;
+    cursor: ne-resize;
 }
 
 /* ==================== */
