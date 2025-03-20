@@ -337,6 +337,12 @@ video {
     font-size: 2.6em;
 }
 
+.work-item h3 {
+    line-height: 115%;
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+
 .work-item-wide video {
     margin-bottom: 0;
 }
