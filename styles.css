@@ -24,7 +24,7 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll */
     position: relative;
         opacity: 0;
-    animation: fadeIn 0.5s ease-in forwards;
+    animation: fadeIn 0.3s ease-in 0.3s forwards;
 }
 
 @keyframes fadeIn {
