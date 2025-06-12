@@ -169,10 +169,10 @@
 
     <section class="intro">
       <div class="container">
-        <video autoplay="autoplay" loop muted playsinline>
-          <source src="images/IP-Intro.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+          <div class="work-item-wide">
+        <img src="images/IP-Intro.avif" />
+          </div>
+          
       </div>
     </section>
 
@@ -208,15 +208,25 @@ We specialise in branding and design for nonprofits, grassroots campaigns and re
     </footer>
 
     <!-- JavaScript for Scroll-Triggered SVG Animation -->
-    <script>
-      const svg = document.querySelector(".hero-section svg");
+<script>
+  const svg = document.querySelector(".hero-section svg");
+  const rotationStep = 22.5; // Keep the same angular step
+  const scrollSensitivity = 7; // Lower number = more steps per scroll (was 50)
+  let currentStep = 0;
 
-      window.addEventListener("scroll", () => {
-        const scrollY = window.scrollY;
-        const rotationFactor = 3; // Adjust this value to control the speed
-        svg.style.transform = `translate(-50%, -47%) rotate(${scrollY / rotationFactor}deg)`;
-      });
-    </script>
+  // Ensure instant transitions
+  svg.style.transition = 'none';
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    const newStep = Math.floor(scrollY / scrollSensitivity); // More sensitive now
+    
+    if (newStep !== currentStep) {
+      currentStep = newStep;
+      svg.style.transform = `translate(-50%, -47%) rotate(${currentStep * rotationStep}deg)`;
+    }
+  });
+</script>
 
     <!-- Glide.js JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js"></script>
