@@ -419,14 +419,12 @@ padding: 20px 6vw 20px 0;
 
 .work-item img {
     width: 100%;
-    height: 34.6vw; /* Fixed height for uniformity */
     object-fit: cover; /* Ensures images fill the space */
     border-radius: 5px;
     object-position: left;
     transition: transform 0.3s ease;
     margin: 0;
     padding: 0;
-    max-height: 481px;
 }
 
 #showcase .work-item:hover img {
