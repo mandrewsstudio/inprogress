@@ -462,6 +462,10 @@ footer .text-center {
         font-size: 1.75rem;
     }
 
+    work-item p {
+    padding-left: 5vw!important;
+}
+    
     .container {
         padding: 1rem;
     }
@@ -509,7 +513,8 @@ footer .text-center {
     }
 
     nav h1 {
-        font-size: 0.9rem;
+        font-size: 1rem;
+        padding: 0!important;
     }
 
     nav a {
@@ -525,6 +530,15 @@ footer .text-center {
     padding: 0 5vw 30px 5vw !important;
 }
 
+    .work-item p {
+    padding-left: 5vw;
+}
+    
+        .button {
+    margin-left: 5vw;
+}
+    
+    
 }
 
 @media only screen and (max-width: 768px) {
