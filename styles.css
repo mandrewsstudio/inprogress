@@ -358,7 +358,7 @@ video {
     background-color: white;
     border-radius: 10px;
     max-width: 100%;
-    height:30vw;
+    height: 30vw;
     min-height: fit-content;
     border: 1px white solid;
 }
@@ -374,10 +374,9 @@ video {
 }
 
 .highlight-item {
-padding: 4vw 6vw 4vw 2vw;
-    background-size: cover!important;
-    border-radius:10px 0 0 10px;
-
+    padding: 4vw 6vw 4vw 2vw;
+    background-size: cover !important;
+    border-radius: 10px 0 0 10px;
 }
 
 .arrow {
@@ -428,8 +427,22 @@ padding: 4vw 6vw 4vw 2vw;
     padding: 0;
 }
 
+.work-item-wide video {
+    width: 100%;
+    object-fit: cover; /* Ensures images fill the space */
+    border-radius: 5px;
+    object-position: left;
+    transition: transform 0.3s ease;
+    margin: 0;
+    padding: 0;
+}
+
 #showcase .work-item:hover img {
     transform: scale(1.03);
+}
+
+#showcase .work-item-wide:hover video {
+    transform: scale(1.015);
 }
 
 .work-item-wide img {
@@ -566,19 +579,17 @@ footer .text-center {
     .work-item .button {
         margin-left: 5vw;
     }
-    
+
     .highlight-item h2 {
-    font-size: 2em;
-    line-height: 108%;
-    letter-spacing: -1%;
-}
+        font-size: 2em;
+        line-height: 108%;
+        letter-spacing: -1%;
+    }
 
-.highlight-item p {
-    font-size: 18px;
-}
-    
+    .highlight-item p {
+        font-size: 18px;
+    }
 
-    
     .wide {
         height: 400px;
     }
@@ -587,20 +598,18 @@ footer .text-center {
 @media (max-width: 600px) {
     .highlight-grid {
         display: grid;
-    grid-template-columns: repeat(1, 1fr); /* 2-column grid */
+        grid-template-columns: repeat(1, 1fr); /* 2-column grid */
         margin: 5vw;
         min-height: 90vw;
         height: fit-content;
     }
     .highlight-item {
         padding-left: 20px;
-            padding-top: 0;
+        padding-top: 0;
         min-height: 170px;
-         border-radius:10px 10px 0 0;
-            
+        border-radius: 10px 10px 0 0;
     }
 }
-
 
 /* ==================== */
 /* Glide Slider Styles */
@@ -815,4 +824,24 @@ footer .text-center {
     gap: 1.9vw;
     margin-top: 0.4rem;
     margin-bottom: 0;
+}
+
+.hover-target {
+    position: relative;
+    cursor: pointer;
+}
+
+#cursor-label {
+    position: fixed;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-size: 1.11rem;
+    z-index: 10000;
+    opacity: 0;
+    transform: translate(-10px, -100%);
+    transition: opacity 0.2s ease;
+    text-align: left;
 }
