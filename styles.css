@@ -845,3 +845,16 @@ footer .text-center {
     transition: opacity 0.2s ease;
     text-align: left;
 }
+
+#cursor.hovering {
+    width: 40px;
+    height: 40px;
+    border-width: 1px;
+    background: rgba(255, 204, 0, 0.2);
+}
+
+#showcase a:hover {
+    cursor:none;
+}
+
+
