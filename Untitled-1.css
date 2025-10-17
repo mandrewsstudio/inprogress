@@ -1,0 +1,30 @@
+:root {
+  --background: #ffffff;
+  --text: #42444a;
+  --link: #0d88d8;
+  --link-hover: #101115;
+  --accent-1: #f6f6f6;
+  --accent-2: #d4d4d6;
+  --accent-3: #84868b;
+  --highlight: #e3e3e6;
+  --sans-serif-font: 'GTW', -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --mono-space-font: ui-monospace, SFMono-Regular, ui-monospace, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --header-width: 94rem;
+  --site-width: 64rem;
+  --photos-wide: 120rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #282c35;
+    --text: #f7f7f7;
+    --link: #45c8f7;
+    --link-hover: #ffffff;
+    --accent-1: #3d4149;
+    --accent-2: #53565d;
+    --accent-3: #d4d4d6;
+    --highlight: #53565d;
+  }
+}
