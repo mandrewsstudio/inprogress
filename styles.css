@@ -206,6 +206,13 @@ a {
     transition: opacity 0.3s ease;
 }
 
+.work-para a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #ec584b!important;
+    transition: opacity 0.3s ease;
+}
+
 a:hover {
     opacity: 0.7;
 }
@@ -803,7 +810,9 @@ footer .text-center {
     h2 {
         font-size: 1.75rem;
     }
-
+.work-para h2 {
+font-size: 3.75em;
+}
     .container {
         padding: 3rem 1rem;
     }
