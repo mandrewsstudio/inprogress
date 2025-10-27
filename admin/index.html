@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Content Manager</title>
-    <script src="https://unpkg.com/decap-cms@^2.0.0/dist/decap-cms.js"></script>
-  </head>
-  <body>
-    <script>
-      // Wait for everything to load
-      window.addEventListener('load', function() {
-        if (window.CMS) {
-          window.CMS.init();
-          console.log('CMS loaded successfully');
-        } else {
-          document.body.innerHTML = '<h1>CMS failed to load</h1>';
-        }
-      });
-    </script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager</title>
+  <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+</head>
+<body>
+  <script>
+    window.addEventListener('load', function() {
+      if (window.CMS) {
+        CMS.init();
+        console.log('CMS loaded successfully');
+      } else {
+        document.body.innerHTML = '<h1 style="padding: 20px; font-family: sans-serif;">CMS script failed to load. Try refreshing.</h1>';
+      }
+    });
+  </script>
+</body>
 </html>
