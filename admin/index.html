@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Content Manager</title>
-  <script src="decap-cms.js"></script>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
   <script>
-    window.addEventListener('load', function() {
-      if (window.CMS) {
-        CMS.init();
-        document.body.innerHTML = '<h1 style="padding: 20px;">CMS Loaded Successfully!</h1>';
-      }
-    });
+    // Simple initialization that works
+    CMS.init();
   </script>
 </body>
 </html>
