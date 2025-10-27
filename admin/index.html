@@ -4,27 +4,39 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
-  <!-- Use the exact CDN from Decap CMS docs -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  <style>
-    /* Basic styles to ensure CMS loads */
-    body { 
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
 </head>
 <body>
-  <!-- Script tag must be in body -->
   <script>
-    // Initialize CMS - this is the critical part
-    if (typeof CMS !== 'undefined') {
-      CMS.init();
-    } else {
-      console.error('Decap CMS not loaded');
-      document.body.innerHTML = '<p>Error loading CMS. Check console.</p>';
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      CMS.init({
+        config: {
+          backend: {
+            name: "git-gateway",
+            branch: "main"
+          },
+          media_folder: "images",
+          public_folder: "/images",
+          collections: [
+            {
+              name: "pages",
+              label: "Pages", 
+              files: [
+                {
+                  label: "Home Page",
+                  name: "home",
+                  file: "index.html",
+                  fields: [
+                    {label: "Title", name: "title", widget: "string"},
+                    {label: "Body", name: "body", widget: "markdown"}
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      });
+    });
   </script>
 </body>
 </html>
