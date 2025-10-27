@@ -2,17 +2,17 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images"
+# Remove local_backend for now
+media_folder: "images" 
 public_folder: "/images"
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: "test"
+    label: "Test"
     files:
-      - label: "Home Page"
-        name: "home"
-        file: "index.html"
+      - label: "Test Page"
+        name: "test"
+        file: "test.md"
         fields:
-          - {label: "Page Title", name: "title", widget: "string"}
-          - {label: "Main Headline", name: "headline", widget: "string"}
-          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
